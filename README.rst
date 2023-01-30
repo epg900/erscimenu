@@ -16,7 +16,7 @@ Quick start
 
 ``from erscimenu.menu import Ulmenu``
 
- ``admin.site.register(Ulmenu)`` 
+``admin.site.register(Ulmenu)`` 
 
 and add your menu into it.
 
