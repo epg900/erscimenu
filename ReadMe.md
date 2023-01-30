@@ -1,12 +1,12 @@
-=====
 Erscimenu
-=====
+=========
 Create UL LI html menu from django model queryset .
-from your ``views`` or your ``template``.
+into your ``views`` or your ``template``.
 
 Quick start
 -----------
-1. Add ``erscimenu`` to your INSTALLED_APPS setting like this:
+
+ Add ``erscimenu`` to your INSTALLED_APPS setting like this:
 ``INSTALLED_APPS = [
 ...,
 'erscimenu' ,
@@ -20,7 +20,7 @@ Quick start
 
 and add your menu into it.
 
-3. Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the Ulmenu models.
+3.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the Ulmenu models.
 
 4.Use this command to add menu with your views:
 
