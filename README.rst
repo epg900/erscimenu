@@ -24,7 +24,7 @@ and add your menu into it.
 
 4.Use this command to add menu with your views:
 
-`` from erscimenu.menu import MenuClass``
+``from erscimenu.menu import MenuClass``
 
 ``cl = MenuClass()``
 
