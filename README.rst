@@ -14,7 +14,7 @@ Quick start
 
 2.(Optional) Register ``Ulmenu`` to admin like this:
 
-``from erscimenu.menu import Ulmenu``
+``from erscimenu.models import Ulmenu``
 
 ``admin.site.register(Ulmenu)`` 
 
@@ -25,6 +25,8 @@ and add your menu into it.
 4.Use this command to add menu with your views:
 
 ``from erscimenu.menu import MenuClass``
+
+``from erscimenu.models import Ulmenu``
 
 ``cl = MenuClass()``
 
