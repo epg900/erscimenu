@@ -22,19 +22,21 @@ Quick start
 ``return render(request,"index.html",{'model' : model })``
 Note :  'model' is variable to use in your template.
 
-or use this command to add menu with your template:
-
-``{% load ersciUlmenutag %} {% ulmenu model None %}``
-
 Or create your model like this:
 
-``class Ulmenu(models.Model):
+class Ulmenu(models.Model):
+
 	title = models.CharField(max_length=100)
+
 	css_class = models.CharField(max_length=100,null=True,blank=True)
+
 	link = models.CharField(max_length=1000,null=True,blank=True)
-	parent = models.ForeignKey("self", models.DO_NOTHING,null=True,blank=True,db_column='parent',related_name='children') 	
+
+	parent = models.ForeignKey("self", models.DO_NOTHING,null=True,blank=True,db_column='parent',related_name='children') 
+	
 	def __str__(self):
-		return self.title``
+
+		return self.title
 
 4.Run  ``python manage.py runserver`` Visit http://127.0.0.1:8000 to create users and its cards.
 
