@@ -14,7 +14,7 @@ Quick start
 
 2.(Optional) Register ``Ulmenu`` to admin like this:
 
-`` from erscimenu.menu import Ulmenu``
+``from erscimenu.menu import Ulmenu``
 
  ``admin.site.register(Ulmenu)`` 
 
