@@ -12,12 +12,13 @@ Quick start
 'erscimenu' ,
 ]``
 
-2.Register ``Ulmenu`` to admin like add ``admin.site.register(Ulmenu)`` and add your menu into it.
+2.(Optional) Register ``Ulmenu`` to admin like add ``admin.site.register(Ulmenu)`` and add your menu into it.
 
 3. Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the Ulmenu models.
 
 4.Use this command to add menu with your views:
-``cl = UlMenuClass()``
+`` from erscimenu.menu import MenuClass
+``cl = MenuClass()``
 ``clmenu = cl.ulmenu(Ulmenu.objects.all(),None)``
 ``return render(request,"index.html",{'model' : model })``
 Note :  'model' is variable to use in your template.
