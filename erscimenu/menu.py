@@ -25,4 +25,5 @@ class MenuClass():
 			return format_html(self.txt)
 		except:
 			return "Error in your model or data!"
-		
+	def __str__(self):
+		return self.menu()

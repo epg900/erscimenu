@@ -14,31 +14,19 @@ INSTALLED_APPS = [
 ]
 ```
 
-2.(Optional) Register ``MenuModel`` to admin like this:
+2.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the MenuModel models.
 
-```
-from erscimenu.models import MenuModel
-admin.site.register(MenuModel)
-```
-
-and add your menu into it.
-
-3.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the MenuModel models.
+3.add your menu with admin registered MenuModel.
 
 4.Use this command to add menu with your views like this:
+
 ```
 from erscimenu.menu import MenuClass
-from erscimenu.models import MenuModel
 
 def index(request):
-	c=MenuClass(MenuModel.objects.all())
-	return HttpResponse(c.menu())
-	
-```
-OR
-```
 	c=MenuClass()
-	return HttpResponse(c.menu())    
+	return HttpResponse(c)
+	
 ```
 
 4.Run  ``python manage.py runserver`` Visit http://127.0.0.1:8000 to create users and its cards.
