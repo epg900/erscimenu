@@ -1,6 +1,6 @@
 from django.db import models
 
-class Ulmenu(models.Model):
+class MenuModel(models.Model):
 	title = models.CharField(max_length=100)
 	css_class = models.CharField(max_length=100,null=True,blank=True)
 	link = models.CharField(max_length=1000,null=True,blank=True)

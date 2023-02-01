@@ -1,11 +1,11 @@
 from django.utils.html import format_html
 class MenuClass():
-	txt = ""
-	def __init__(self):
-		txt = ""
-	def ulmenu(self,model,parent_id):
+	def __init__(self,model):
+		self.txt=""
+		self.model=model		
+	def menu(self,parent_id=None):
 		try:		
-			model_query=model.filter(parent_id=parent_id)
+			model_query=self.model.filter(parent_id=parent_id)
 			length=len(model_query)
 			if length == 0:
 				return
@@ -18,7 +18,7 @@ class MenuClass():
 				self.txt += model_query[i].title
 				if model_query[i].link is not None and model_query[i].link != "":
 					self.txt += "</a>"
-				self.ulmenu(model,model_query[i].id)
+				self.menu(model_query[i].id)
 				self.txt += "</li>"
 			self.txt += "</ul>"
 			return format_html(self.txt)

@@ -1,7 +1,6 @@
 Erscimenu
 =========
 Create UL LI html menu from django model queryset .
-into your ``views`` or your ``template``.
 
 Quick start
 -----------
@@ -14,31 +13,35 @@ INSTALLED_APPS = [
 ]
 ```
 
-2.(Optional) Register ``Ulmenu`` to admin like this:
+2.(Optional) Register ``MenuModel`` to admin like this:
 
 ```
-from erscimenu.models import Ulmenu
-admin.site.register(Ulmenu)
+from erscimenu.models import MenuModel
+admin.site.register(MenuModel)
 ```
 
 and add your menu into it.
 
-3.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the Ulmenu models.
+3.Run ``python manage.py makemigrations`` and ``python manage.py migrate``  to create the MenuModel models.
 
-4.Use this command to add menu with your views:
+4.Use this command to add menu with your views like this:
 ```
 from erscimenu.menu import MenuClass
-from erscimenu.models import Ulmenu
-cl = MenuClass()
-clmenu = cl.ulmenu(Ulmenu.objects.all(),None)
-return render(request,"index.html",{'model' : model })
+from erscimenu.models import MenuModel
+
+def index(request):
+	c=MenuClass(MenuModel.objects.all())
+	return HttpResponse(c.menu())
 ```
 Note :  'model' is variable to use in your template.
+
+4.Run  ``python manage.py runserver`` Visit http://127.0.0.1:8000 to create users and its cards.
+
 
 Model is like this:
 ------------------
 ```
-class Ulmenu(models.Model):
+class MenuModel(models.Model):
 	title = models.CharField(max_length=100)
 	css_class = models.CharField(max_length=100,null=True,blank=True)
 	link = models.CharField(max_length=1000,null=True,blank=True)
@@ -46,5 +49,4 @@ class Ulmenu(models.Model):
 	def __str__(self):
 		return self.title
 ```
-4.Run  ``python manage.py runserver`` Visit http://127.0.0.1:8000 to create users and its cards.
 
