@@ -1,3 +1,4 @@
+
 Erscimenu
 =========
 Create UL LI html menu from django model queryset .
@@ -32,8 +33,13 @@ from erscimenu.models import MenuModel
 def index(request):
 	c=MenuClass(MenuModel.objects.all())
 	return HttpResponse(c.menu())
+	
 ```
-Note :  'model' is variable to use in your template.
+OR
+```
+	c=MenuClass()
+	return HttpResponse(c.menu())    
+```
 
 4.Run  ``python manage.py runserver`` Visit http://127.0.0.1:8000 to create users and its cards.
 

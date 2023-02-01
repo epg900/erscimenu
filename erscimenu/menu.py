@@ -1,8 +1,9 @@
 from django.utils.html import format_html
+from erscimenu.models import MenuModel
 class MenuClass():
-	def __init__(self,model):
+	def __init__(self,model=MenuModel):
 		self.txt=""
-		self.model=model		
+		self.model=model.objects.all()		
 	def menu(self,parent_id=None):
 		try:		
 			model_query=self.model.filter(parent_id=parent_id)
